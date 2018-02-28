@@ -7,4 +7,8 @@ public abstract class Vehicle {
 	private double weight;
 	private double length;
 	private int numberOfSeats;
+	
+	
+	
+	
 }

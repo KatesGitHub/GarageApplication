@@ -11,7 +11,7 @@ public abstract class Vehicle {
 	private ColorType color;
 	
 	public Vehicle(String brandName, String modelYear, String regNumber, double weight, ColorType color) {
-		super();
+		
 		this.brandName = brandName;
 		this.modelYear = modelYear;
 		this.regNumber = regNumber;

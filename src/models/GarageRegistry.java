@@ -3,6 +3,7 @@ package models;
 import java.util.ArrayList;
 
 import utilities.ParkStatus;
+import utilities.VehicleType;
 
 public class GarageRegistry {
 	
@@ -15,11 +16,14 @@ public class GarageRegistry {
 		garage = new Garage(1, "A garage", 10, 0);
 	}
 	
-	public void parkVehicle(Vehicle vehicle) throws GarageFullException{
+	public void parkVehicle(Vehicle vehicle) throws VehicleParkedAlreadyException{
 		if(registry.size()<garage.getCapacity() && vehicle.getStatus() == ParkStatus.UNPARK) {
 			registry.add(vehicle);
 		}
-		throw new GarageFullException();
+		else {
+			throw new VehicleParkedAlreadyException();
+		}
+		
 	}
 	
 	public void unparkVehicle(Vehicle vehicle) {
@@ -28,12 +32,14 @@ public class GarageRegistry {
 		}
 	}
 	
-	public Vehicle findVehicle(String regNumber) throws VehicleNotFoundException {
+	public Vehicle findVehicle(String regNumber) throws VehicleNotFoundException
+	{
 		for(Vehicle findVehicle : registry) {
 			if(findVehicle.getRegNumber().equals(regNumber)) {
 				return findVehicle;
-			}
+			}			
 		}
+	
 		throw new VehicleNotFoundException();
 	}
 	
@@ -41,7 +47,33 @@ public class GarageRegistry {
 		for(Vehicle nextVehicle: registry) {
 			System.out.println(nextVehicle);
 		}
+	}
+	
+	public void getVehicleType() {
 		
+		int countBus=0;
+		int countCar=0;
+		int countMotorcycle=0;
+		int countAirplane=0;
+		int countBoat=0;
+		
+		for(Vehicle nextVehicle: registry) {
+			if(nextVehicle.getVehicleType() == VehicleType.BUS) {
+				countBus++;
+			} else if(nextVehicle.getVehicleType() == VehicleType.CAR) {
+				countCar++;
+			} else if(nextVehicle.getVehicleType() == VehicleType.MOTORCYCLE) {
+				countMotorcycle++;
+			} else if(nextVehicle.getVehicleType() == VehicleType.AIRPLANE) {
+				countAirplane++;
+			} else if(nextVehicle.getVehicleType() == VehicleType.BOAT) {
+				countBoat++;
+			}
+		}
+			
+		System.out.println("There are " + countBus + " buses, " + countCar + " cars, " + countMotorcycle + " motorcycles, " + countAirplane + " airplanes, " + countBoat + " boats, ");
 		
 	}
+	
+	
 }

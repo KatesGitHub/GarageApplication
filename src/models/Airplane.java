@@ -2,6 +2,7 @@ package models;
 
 import utilities.ColorType;
 import utilities.FuelType;
+import utilities.VehicleType;
 
 public class Airplane extends Vehicle {
 	
@@ -10,7 +11,7 @@ public class Airplane extends Vehicle {
 	private FuelType fuelType;
 
 	public Airplane(String brandName, String modelYear, String regNumber, double weight, ColorType color, int nrOfEngines, int nrOfSeats, FuelType fuelType) {
-		super(brandName, modelYear, regNumber, weight, color);
+		super(brandName, modelYear, regNumber, weight, color, VehicleType.AIRPLANE);
 		this.nrOfEngines = nrOfEngines;
 		this.nrOfSeats = nrOfSeats;
 		this.fuelType = fuelType;
@@ -26,6 +27,10 @@ public class Airplane extends Vehicle {
 
 	public FuelType getFuelType() {
 		return fuelType;
+	}
+	
+	public VehicleType getVehicleType() {
+		return VehicleType.AIRPLANE;
 	}
 
 }

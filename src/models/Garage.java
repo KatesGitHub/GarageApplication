@@ -4,7 +4,6 @@ import utilities.ParkStatus;
 
 public class Garage {
 	
-
 	private int id;
 	private String name;
 	private int capacity;
@@ -19,7 +18,6 @@ public class Garage {
 		this.nrOfVehicle = nrOfVehicle;
 		
 	}
-
 
 	public int getId() {
 		return id;

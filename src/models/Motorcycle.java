@@ -1,0 +1,53 @@
+package models;
+
+import utilities.ColorType;
+import utilities.FuelType;
+
+public class Motorcycle extends Vehicle {
+
+	
+	private double length;
+	private double cylinderVolume;
+	private FuelType fuelType;
+	
+	
+	
+	public Motorcycle(String brandName, String modelYear, String regNumber, double weight, ColorType color,double length,
+	double cylinderVolume, 	FuelType fuelType) 
+	{
+		
+		super(brandName, modelYear, regNumber, weight, color);
+		
+		this.length=length;
+		this.cylinderVolume=cylinderVolume;
+		this.fuelType=fuelType;
+	}
+
+
+
+	public double getLength() {
+		return length;
+	}
+
+
+
+	public double getCylinderVolume() {
+		return cylinderVolume;
+	}
+
+
+
+	public FuelType getFuelType() {
+		return fuelType;
+	}
+
+
+	public String toString() {
+		return "Vehical Brand Name: "+ getBrandName()+".    Reg Number: "+getRegNumber() ;
+	}
+	
+	}
+
+	
+	
+

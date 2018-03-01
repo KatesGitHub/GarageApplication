@@ -1,5 +1,6 @@
 package models;
 
+import utilities.ParkStatus;
 import utilities.ColorType;
 
 public abstract class Vehicle {
@@ -9,6 +10,7 @@ public abstract class Vehicle {
 	private String regNumber;
 	private double weight;
 	private ColorType color;
+	private ParkStatus status;
 	
 	public Vehicle(String brandName, String modelYear, String regNumber, double weight, ColorType color) {
 		super();
@@ -17,6 +19,7 @@ public abstract class Vehicle {
 		this.regNumber = regNumber;
 		this.weight = weight;
 		this.color = color;
+		this.status = ParkStatus.UNPARK;
 	}
 
 	public String getBrandName() {
@@ -57,6 +60,10 @@ public abstract class Vehicle {
 
 	public void setColor(ColorType color) {
 		this.color = color;
+	}
+	
+	public ParkStatus getStatus() {
+		return status;
 	}
 	
 	@Override

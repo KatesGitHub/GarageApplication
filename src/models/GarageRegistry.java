@@ -44,10 +44,12 @@ public class GarageRegistry {
 		throw new VehicleNotFoundException();
 	}
 	
-	public void getAllVehicles() {
-		for(Vehicle nextVehicle: registry) {
-			System.out.println(nextVehicle);
-		}
+	public ArrayList<Vehicle> getAllVehicles() {
+		return registry;
+	}
+	
+	public int getNumberOfVehicles() {
+		return registry.size();
 	}
 	
 	public void getVehicleType() {

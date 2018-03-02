@@ -16,13 +16,15 @@ public class GarageRegistry {
 		garage = new Garage(1, "A garage", 10, 0);
 	}
 	
-	public void parkVehicle(Vehicle vehicle) throws VehicleParkedAlreadyException{
-		if(registry.size()<garage.getCapacity() && vehicle.getStatus() == ParkStatus.UNPARK) {
-			registry.add(vehicle);
-		}
-		else {
+	public void parkVehicle(Vehicle vehicle) throws GarageFullException, VehicleParkedAlreadyException {
+		
+		if(registry.size() >= garage.getCapacity()) {
+			throw new GarageFullException();
+		}else if (registry.contains(vehicle)) {
 			throw new VehicleParkedAlreadyException();
 		}
+		
+		registry.add(vehicle);
 		
 	}
 	
@@ -32,10 +34,9 @@ public class GarageRegistry {
 		}
 	}
 	
-	public Vehicle findVehicle(String regNumber) throws VehicleNotFoundException
-	{
+	public Vehicle findVehicle(String regNumber) throws VehicleNotFoundException {
 		for(Vehicle findVehicle : registry) {
-			if(findVehicle.getRegNumber().equals(regNumber)) {
+			if(findVehicle.getRegNumber().equals(regNumber) && findVehicle.getStatus() == ParkStatus.PARK) {
 				return findVehicle;
 			}			
 		}
@@ -71,7 +72,7 @@ public class GarageRegistry {
 			}
 		}
 			
-		System.out.println("There are " + countBus + " buses, " + countCar + " cars, " + countMotorcycle + " motorcycles, " + countAirplane + " airplanes, " + countBoat + " boats, ");
+		System.out.println("There are " + countBus + " buses, " + countCar + " cars, " + countMotorcycle + " motorcycles, " + countAirplane + " airplanes, " + countBoat + " boats");
 		
 	}
 	

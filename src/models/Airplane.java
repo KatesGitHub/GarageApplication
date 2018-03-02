@@ -33,4 +33,8 @@ public class Airplane extends Vehicle {
 		return VehicleType.AIRPLANE;
 	}
 
+	@Override
+	public String toString() {
+		return getVehicleType() + ", vehicle name " + getBrandName() + ", regNumber " + getRegNumber() + ", nrOfEngines " + getNrOfEngines();
+	}
 }

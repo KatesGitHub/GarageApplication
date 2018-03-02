@@ -38,8 +38,9 @@ public class Motorcycle extends Vehicle {
 		return VehicleType.MOTORCYCLE;
 	}
 	
+	@Override
 	public String toString() {
-		return "Vehical Brand Name: "+ getBrandName()+".    Reg Number: "+getRegNumber() ;
+		return getVehicleType() + ", vehicle name " + getBrandName() + ", regNumber " + getRegNumber() + ", cylinderVolume " + getCylinderVolume();
 	}
 	
 	}

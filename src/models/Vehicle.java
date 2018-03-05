@@ -120,8 +120,7 @@ public abstract class Vehicle {
 
 	@Override
 	public String toString() {
-		return "Vehicle [getBrandName()=" + getBrandName() + ", getModelYear()=" + getModelYear() + ", getRegNumber()="
-				+ getRegNumber() + ", getWeight()=" + getWeight() + ", getColor()=" + getColor() + "]";
+		return getVehicleType() + ", vehicle name " + getBrandName() + ", regNumber " + getRegNumber();
 	}
 	
 }

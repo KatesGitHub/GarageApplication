@@ -26,4 +26,8 @@ public class Boat extends Vehicle {
 		return VehicleType.BOAT;
 	}
 
+	@Override
+	public String toString() {
+		return getVehicleType() + ", vehicle name " + getBrandName() + ", regNumber " + getRegNumber() + ", length " + getLength() + ", sailBoat " + isSailBoat();
+	}
 }

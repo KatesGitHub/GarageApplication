@@ -10,7 +10,6 @@ public class Bus extends Vehicle {
 	private double length;
 	private int numberOfSeats;
 	private FuelType fuelType;
-	private int numberOfBus;
 	
 	public Bus(String brandName, String modelYear, String regNumber, double weight, ColorType color, int numberOfEngine,
 			 double length,int numberOfSeats,FuelType fuelType ) 
@@ -22,7 +21,6 @@ public class Bus extends Vehicle {
 	    this.length=length;
 		this.numberOfSeats=numberOfSeats;
 		this.fuelType=fuelType;
-		numberOfBus++;
 	}
 
 	public int getNumberOfEngine() {
@@ -45,8 +43,9 @@ public class Bus extends Vehicle {
 		return VehicleType.BUS;
 	}
 
+	@Override
 	public String toString() {
-		return "Vehical Brand Name: "+ getBrandName()+".    Reg Number: "+getRegNumber() ;
+		return getVehicleType() + ", vehicle name " + getBrandName() + ", regNumber " + getRegNumber() + ", nrOfSeats " + getNumberOfSeats();
 	}
 
 }

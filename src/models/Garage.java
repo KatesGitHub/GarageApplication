@@ -39,18 +39,7 @@ public class Garage {
 		return vehicle;
 	}
 
-	@Override
-	public int hashCode() {
-		final int prime = 31;
-		int result = 1;
-		result = prime * result + id;
-		result = prime * result + ((name == null) ? 0 : name.hashCode());
-		result = prime * result + nrOfVehicle;
-		result = prime * result + capacity;
-		result = prime * result + ((vehicle == null) ? 0 : vehicle.hashCode());
-		return result;
-	}
-
+	
 
 	@Override
 	public boolean equals(Object obj) {
